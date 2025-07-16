@@ -17,12 +17,20 @@ export default defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
-  // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
   plugins: [
-    structureTool({structure}),
-    // Vision is for querying with GROQ from inside the Studio
-    // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({defaultApiVersion: apiVersion}),
+    structureTool({ structure }), // ✅ custom desk structure with singleton support
+    visionTool({ defaultApiVersion: apiVersion }),
   ],
+  document: {
+    // 🔒 Disable actions for singleton
+    actions: (input, context) =>
+      ['siteSettings', 'homeIntro', 'homeStory', 'homeFlavours'].includes(context.schemaType) //TODO
+      ? input.filter(
+          (actionItem) =>
+            actionItem.action &&
+            !['create', 'delete', 'duplicate'].includes(actionItem.action)
+        )
+      : input,
+  },
 })
