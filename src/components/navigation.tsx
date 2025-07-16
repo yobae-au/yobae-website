@@ -1,6 +1,5 @@
 'use client'
 
-import siteSettings from '@/sanity/schemaTypes/siteSettings'
 import type { SiteSettings} from '@/sanity/types'
 import { useState } from 'react'
 import { Link } from 'react-scroll'
@@ -13,18 +12,22 @@ export function Navigation({ data }: Props) {
   const [open, setOpen] = useState(false)
 
 
-  console.log('[siteSettings - data]', data)
+  // console.log('[siteSettings - data]', data)
 
   return (
     <>
       {/* Toggle Button */}
+      <div className='fixed top-4 left-4 z-50 p-2 '>
+
       <button
         onClick={() => setOpen(!open)}
-        className="fixed top-4 left-4 z-50 p-2 text-white bg-[#2F2A1C] rounded-md text-2xl leading-none"
+        className="text-white bg-[#2F2A1C] rounded-md text-2xl leading-none"
         aria-label="Toggle menu"
-      >
+        >
         {open ? 'O' : 'X'}
       </button>
+      <h1 className="origin-left rotate-90 whitespace-nowrap">Yo Bae</h1>
+      </div>
 
       {/* Slide-out menu panel */}
       <div

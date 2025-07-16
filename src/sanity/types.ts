@@ -50,6 +50,7 @@ export type HomeFlavours = {
   blurb?: string
   items?: {
     title?: string
+    titleTwo?: string
     subtitle?: string
     primaryImage?: {
       asset: { _ref: string; _type: 'reference' }

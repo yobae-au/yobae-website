@@ -26,6 +26,7 @@ export default defineType({
           type: 'object',
           fields: [
             defineField({ name: 'title', title: 'Title', type: 'string' }),
+            defineField({ name: 'titleTwo', title: 'Title Bold', type: 'string' }),
             defineField({ name: 'subtitle', title: 'Subtitle', type: 'string' }),
             defineField({
               name: 'primaryImage',

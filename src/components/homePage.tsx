@@ -26,7 +26,7 @@ export function HomePage({
   homeFooter, }: Props) {
   
   // console.log('[siteSettings]', siteSettings)
-  console.log('[homeIntro]', homeIntro)
+  // console.log('[homeIntro]', homeIntro)
   // console.log('[homeStory]', homeStory)
   // console.log('[homeFlavours]', homeFlavours)
   // console.log('[homeToppings]', homeToppings)
@@ -35,31 +35,31 @@ export function HomePage({
   return (
     <div className="scroll-smooth">
       <Element name="intro">
-        <section className="min-h-screen flex items-center justify-center bg-red-200">
+        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
           <Intro data={homeIntro} />
         </section>
       </Element>
 
       <Element name="story">
-        <section className="min-h-screen flex items-center justify-center bg-green-200">
+        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
           <Story data={homeStory} />
         </section>
       </Element>
 
       <Element name="flavours">
-        <section className="min-h-screen flex items-center justify-center bg-blue-200">
+        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
           <Flavours data={homeFlavours}/>
         </section>
       </Element>
 
       <Element name="toppings">
-        <section className="min-h-screen flex items-center justify-center bg-yellow-200">
+        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
           <Toppings data={homeToppings} />
         </section>
       </Element>
 
       <Element name="footer">
-        <section className="min-h-screen flex items-center justify-center bg-purple-200">
+        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
           <HomeFooterSection data={homeFooter} />
         </section>
       </Element>
