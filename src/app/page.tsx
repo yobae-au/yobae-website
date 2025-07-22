@@ -1,20 +1,50 @@
-import Image from "next/image";
+import { client } from '@/sanity/lib/client'
+import { Navigation } from '@/components/navigation'
+import { HomePage } from '@/components/homePage'
 
-export default function Home() {
+import type {
+  SiteSettings,
+  HomeIntro,
+  HomeStory,
+  HomeFlavours,
+  HomeToppings,
+  HomeFooter,
+} from '@/sanity/types'
+
+export default async function Page() {
+  const [siteSettings, homeIntro, homeStory, homeFlavours, homeToppings, homeFooter] =
+    await Promise.all([
+      client.fetch<SiteSettings>(
+        `*[_type == "siteSettings" && _id == "siteSettings"][0]`
+      ),
+      client.fetch<HomeIntro>(
+        `*[_type == "homeIntro" && _id == "homeIntro"][0]`
+      ),
+      client.fetch<HomeStory>(
+        `*[_type == "homeStory" && _id == "homeStory"][0]`
+      ),
+      client.fetch<HomeFlavours>(
+        `*[_type == "homeFlavours" && _id == "homeFlavours"][0]`
+      ),
+      client.fetch<HomeToppings>(
+        `*[_type == "homeToppings" && _id == "homeToppings"][0]`
+      ),
+      client.fetch<HomeFooter>(
+        `*[_type == "homeFooter" && _id == "homeFooter"][0]`
+      ),
+    ])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-      </footer>
+    <div className="mx-[1rem]">
+      <Navigation data={siteSettings} />
+      <HomePage
+        siteSettings={siteSettings}
+        homeIntro={homeIntro}
+        homeStory={homeStory}
+        homeFlavours={homeFlavours}
+        homeToppings={homeToppings}
+        homeFooter={homeFooter}
+      />
     </div>
-  );
+  )
 }
