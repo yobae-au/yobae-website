@@ -35,7 +35,7 @@ export default async function Page() {
     ])
 
   return (
-    <>
+    <div className="mx-[1rem]">
       <Navigation data={siteSettings} />
       <HomePage
         siteSettings={siteSettings}
@@ -45,6 +45,6 @@ export default async function Page() {
         homeToppings={homeToppings}
         homeFooter={homeFooter}
       />
-    </>
+    </div>
   )
 }

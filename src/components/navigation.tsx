@@ -1,8 +1,10 @@
 'use client'
 
 import type { SiteSettings} from '@/sanity/types'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Link } from 'react-scroll'
+import h_logo from '../../public/h_logo.png'
 
 type Props = {
   data: SiteSettings
@@ -15,23 +17,25 @@ export function Navigation({ data }: Props) {
   // console.log('[siteSettings - data]', data)
 
   return (
-    <>
+    <div className="nav-col relative">
       {/* Toggle Button */}
-      <div className='fixed top-4 left-4 z-50 p-2 '>
+      <div className='fixed top-[1rem] left-[1rem] z-5'>
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="text-white bg-[#2F2A1C] rounded-md text-2xl leading-none"
-        aria-label="Toggle menu"
-        >
-        {open ? 'O' : 'X'}
-      </button>
-      <h1 className="origin-left rotate-90 whitespace-nowrap">Yo Bae</h1>
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-white bg-[#2F2A1C] rounded-md text-2xl leading-none"
+          aria-label="Toggle menu"
+          >
+          {open ? 'O' : 'X'}
+        </button>
+        <div className='w-[50%]'>
+          <Image src={h_logo} alt="Logo" />
+        </div>
       </div>
 
       {/* Slide-out menu panel */}
       <div
-        className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[#2F2A1C] text-white shadow-lg transition-transform duration-300 ${
+        className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[#2F2A1C] text-white shadow-lg transition-transform duration-300 z-10 ${
           open ? 'translate-x-0' : '-translate-x-[110%]'
         }`}
       >
@@ -79,6 +83,6 @@ export function Navigation({ data }: Props) {
           <>{data.email}</>
         </div>
       </div>
-    </>
+    </div>
   )
 }

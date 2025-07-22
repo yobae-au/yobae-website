@@ -7,6 +7,7 @@ import Intro from './sections/intro'
 import Story from './sections/story'
 import Toppings from './sections/toppings'
 import HomeFooterSection from './sections/homeFooter'
+import SecondFooter from './sections/secondFooter'
 
 type Props = {
   siteSettings: SiteSettings
@@ -18,7 +19,7 @@ type Props = {
 }
 
 export function HomePage({  
- // siteSettings,
+ siteSettings,
   homeIntro,
   homeStory,
   homeFlavours,
@@ -60,9 +61,12 @@ export function HomePage({
 
       <Element name="footer">
         <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
-          <HomeFooterSection data={homeFooter} />
+          <HomeFooterSection data={homeFooter} siteSettings={siteSettings}/>
         </section>
       </Element>
+      <section>
+        <SecondFooter data={homeFooter} siteSettings={siteSettings} className="" />
+      </section>
     </div>
   )
 }
