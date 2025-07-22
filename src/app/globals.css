@@ -45,11 +45,8 @@ body {
   font-family: 'GintoNord', Arial, Helvetica, sans-serif;
 }
 
-.nav-col {
-  width: calc((100% - (1rem * 11)) / 12);
-  background: blue; /* for debugging */
-  left: 1rem;
-}
+.fake-1-col {
+  width: calc((100% - (1rem * 11)) / 12);}
 
 .home-marquee span.m-bold {
   width: 400px;
@@ -58,5 +55,12 @@ body {
 
 .title {
   font-family: 'GintoNordBold', sans-serif;
-  font-size: 2rem;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: black !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px !important;
 }

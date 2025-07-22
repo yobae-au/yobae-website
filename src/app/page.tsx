@@ -35,7 +35,7 @@ export default async function Page() {
     ])
 
   return (
-    <div className="mx-[1rem]">
+    <div>
       <Navigation data={siteSettings} />
       <HomePage
         siteSettings={siteSettings}

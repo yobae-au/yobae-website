@@ -11,8 +11,8 @@ export default function Story({ data }: Props) {
 
   return (
     <div className="grid grid-cols-12 gap-4">
-      <div className="col-span-5 col-start-7">
-        <h2>{data.title}</h2>
+      <div className="col-span-10 col-start-3 lg:col-span-5 lg:col-start-7">
+        <h2 className='title uppercase'>{data.title}</h2>
         <p>{data.blurb}</p>
         <div className="flex justify-end">
           <div className="relative w-3/5 h-auto m-h-[400px]">

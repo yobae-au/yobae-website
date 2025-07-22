@@ -10,7 +10,15 @@ export default function SecondFooter({data, siteSettings}: Props) {
   console.log(siteSettings)
   return (
     <div>
-    <div className=''>
+      <div className="grid grid-cols-12 gap-4 px-4">
+        <div className='col-span-2'>&copy;yobae 2025</div>
+        <div className='col-span-3 col-start-10 flex justify-between'>
+          <span className=''>hello@yobae.com.au</span>
+          <span className=''>@yobae</span>
+        </div>
+
+      </div>
+      <div>
         {data.marquee && (
           <div className="home-marquee bg-black text-white p-2">
             <Marquee autoFill={true}>

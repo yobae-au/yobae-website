@@ -17,9 +17,9 @@ export function Navigation({ data }: Props) {
   // console.log('[siteSettings - data]', data)
 
   return (
-    <div className="nav-col relative">
+    <div className=" relative">
       {/* Toggle Button */}
-      <div className='fixed top-[1rem] left-[1rem] z-5'>
+      <div className='fixed fake-1-col top-[1rem] left-[1rem] z-5'>
 
         <button
           onClick={() => setOpen(!open)}
@@ -34,19 +34,21 @@ export function Navigation({ data }: Props) {
       </div>
 
       {/* Slide-out menu panel */}
-      <div
-        className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[#2F2A1C] text-white shadow-lg transition-transform duration-300 z-10 ${
-          open ? 'translate-x-0' : '-translate-x-[110%]'
-        }`}
-      >
-        <div className="flex flex-col items-start justify-center h-full gap-6 p-8 text-xl">
+   <div
+      className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[blue] text-white shadow-lg transition-transform duration-300 ${
+        open ? 'translate-x-0' : '-translate-x-[110%]'
+      }`}
+    >
+      <div className="relative h-full p-8">
+        {/* Centered Menu Items */}
+        <div className="flex flex-col items-center justify-center gap-6 text-xl text-center h-full">
           <Link
             to="story"
             smooth
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer"
+            className="cursor-pointer title"
           >
             The Story
           </Link>
@@ -56,7 +58,7 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer"
+            className="cursor-pointer title"
           >
             The Flavours
           </Link>
@@ -66,7 +68,7 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer"
+            className="cursor-pointer title"
           >
             The Toppings
           </Link>
@@ -76,13 +78,19 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer"
+            className="cursor-pointer title"
           >
             Join The Yo Club!
           </Link>
-          <>{data.email}</>
+        </div>
+
+        {/* Email pinned to bottom */}
+        <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
+          {data.email}
         </div>
       </div>
+    </div>
+
     </div>
   )
 }
