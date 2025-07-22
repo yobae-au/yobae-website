@@ -7,6 +7,7 @@ type Props = {
 }
 
 export default function SecondFooter({data, siteSettings}: Props) {
+  console.log(siteSettings)
   return (
     <div>
     <div className=''>

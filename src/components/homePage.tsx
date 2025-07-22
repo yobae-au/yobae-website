@@ -65,7 +65,7 @@ export function HomePage({
         </section>
       </Element>
       <section>
-        <SecondFooter data={homeFooter} siteSettings={siteSettings} className="" />
+        <SecondFooter data={homeFooter} siteSettings={siteSettings} />
       </section>
     </div>
   )
