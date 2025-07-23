@@ -9,6 +9,7 @@ export type SiteSettings = {
   appStoreUrl?: string
   googlePlayUrl?: string
   locations?: {
+    title?: string
     location?: string
     store?: string
     street?: string
@@ -70,6 +71,7 @@ export type HomeToppings = {
   blurb?: string
   items?: {
     title?: string
+    subTitle?: string
     image?: {
       asset: { _ref: string; _type: 'reference' }
       alt?: string

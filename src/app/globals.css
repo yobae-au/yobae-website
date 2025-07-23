@@ -25,12 +25,12 @@
   font-display: swap;
 }
 
-@theme inline {
+/* @theme (inline) {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -43,10 +43,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'GintoNord', Arial, Helvetica, sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
 }
 
 .fake-1-col {
-  width: calc((100% - (1rem * 11)) / 12);}
+  width: calc((100% - (1rem * 11)) / 12);
+}
+
+
 
 .home-marquee span.m-bold {
   width: 400px;
@@ -57,10 +61,28 @@ body {
   font-family: 'GintoNordBold', sans-serif;
 }
 
+.title-scale {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.big-title-scale {
+  font-size: clamp(4.25rem, 6vw, 10rem);
+  line-height: 0.8;
+}
+
+
 .swiper-button-prev, .swiper-button-next {
   color: black !important;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after {
   font-size: 20px !important;
+  font-family: 'GintoNordBold' !important;
+}
+.swiper-button-prev:after {
+    content: '〈' !important;
+}
+
+.swiper-button-next:after {
+    content: '〉' !important;
 }

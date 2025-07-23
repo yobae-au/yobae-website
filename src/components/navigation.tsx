@@ -19,7 +19,7 @@ export function Navigation({ data }: Props) {
   return (
     <div className=" relative">
       {/* Toggle Button */}
-      <div className='fixed fake-1-col top-[1rem] left-[1rem] z-5'>
+      <div className='fixed fake-1-col top-[2rem] left-[2rem] z-5'>
 
         <button
           onClick={() => setOpen(!open)}
@@ -28,14 +28,14 @@ export function Navigation({ data }: Props) {
           >
           {open ? 'O' : 'X'}
         </button>
-        <div className='w-[50%]'>
+        <div className='w-[35%]'>
           <Image src={h_logo} alt="Logo" />
         </div>
       </div>
 
       {/* Slide-out menu panel */}
    <div
-      className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[blue] text-white shadow-lg transition-transform duration-300 ${
+      className={`fixed top-16 left-4 z-40 w-[400px] h-[600px] bg-[#171717] text-white shadow-lg transition-transform duration-300 ${
         open ? 'translate-x-0' : '-translate-x-[110%]'
       }`}
     >
@@ -48,9 +48,9 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer title"
+            className="cursor-pointer title capitalize"
           >
-            The Story
+            THE STORY
           </Link>
           <Link
             to="flavours"
@@ -58,9 +58,9 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer title"
+            className="cursor-pointer title capitalize"
           >
-            The Flavours
+            THE FLAVOURS
           </Link>
           <Link
             to="toppings"
@@ -68,25 +68,35 @@ export function Navigation({ data }: Props) {
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer title"
+            className="cursor-pointer title capitalize"
           >
-            The Toppings
+            THE TOPPINGS
           </Link>
           <Link
-            to="footer"
+            to="yoclub"
             smooth
             duration={600}
             offset={-80}
             onClick={() => setOpen(false)}
-            className="cursor-pointer title"
+            className="cursor-pointer title capitalize"
           >
-            Join The Yo Club!
+            JOIN THE JO CLUB!
+          </Link>
+          <Link
+            to="locations"
+            smooth
+            duration={600}
+            offset={-80}
+            onClick={() => setOpen(false)}
+            className="cursor-pointer title capitalize"
+          >
+            LOCATIONS
           </Link>
         </div>
 
         {/* Email pinned to bottom */}
         <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
-          {data.email}
+          <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae</a>
         </div>
       </div>
     </div>

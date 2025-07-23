@@ -10,7 +10,7 @@ export default function TextTicker({ data }: TextTickerProps) {
     <Marquee autoFill={true}>
       <div>
         {data.map((text, index) => (
-          <span key={index} className="text-base font-semibold mx-2">
+          <span key={index} className=" font-semibold mx-2">
             {text}
           </span>
         ))}

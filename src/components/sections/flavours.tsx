@@ -18,13 +18,13 @@ export default function Flavours({ data }: Props) {
     }, [])
     
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className="grid grid-cols-12 gap-4 lg:relative lg:top-[-300px]">
       <div className="col-span-10 col-start-3 lg:col-span-4 lg:col-start-2">
-        <h2 className="title mb-2">{data.title}</h2>
-        <p className="text-base mb-6">{data.blurb}</p>
+        <h2 className="title mb-4 text-4xl">{data.title}</h2>
+        <p className=" mb-6">{data.blurb}</p>
       </div>
 
-      <div className="col-span-6 col-start-4 lg:col-span-6 lg:col-start-4 grid grid-cols-6 gap-y-12">
+      <div className="col-span-6 col-start-4 lg:mt-24 lg:col-span-6 lg:col-start-4 grid grid-cols-6 gap-y-12">
         {data.items?.map((item, index) => {
           const primary = item.primaryImage
           const secondary = item.secondaryImage
@@ -35,7 +35,7 @@ export default function Flavours({ data }: Props) {
           return (
             <div
               key={index}
-              className={`col-span-12 lg:col-span-2 ${colStartClass}`}
+              className={`col-span-12 lg:col-span-2 ${colStartClass} mb-8`}
             >
               {primary?.asset && (
                 <div
@@ -57,17 +57,17 @@ export default function Flavours({ data }: Props) {
                         ? isTapped
                           ? 'blur-sm'
                           : ''
-                        : 'group-hover:blur-sm group-focus:blur-sm'
+                        : 'group-hover:blur-md group-focus:blur-md'
                     }`}
                   />
 
                   {secondary?.asset && (
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ width: '80%', margin: '0 auto' }}>
                       <Image
-                        src={urlFor(secondary).width(200).height(200).url()}
+                        src={urlFor(secondary).url()}
                         alt={secondary.alt || item.title || 'Flavour Alternate'}
-                        width={200}
-                        height={200}
+                        width={280}
+                        height={330}
                         className={`transition duration-300 ease-in-out object-cover rounded ${
                           isMobile
                             ? isTapped
@@ -80,10 +80,10 @@ export default function Flavours({ data }: Props) {
                   )}
                 </div>
               )}
-              <div className="text-center">
-                <h3 className="text-lg mb-1">{item.title}</h3>
-                <h3 className="text-lg title uppercase">{item.titleTwo}</h3>
-                <p className="text-sm text-gray-700 mb-2">{item.subtitle}</p>
+              <div className="text-center mt-4">
+                <h3 className="text-4xl">{item.title}</h3>
+                <h3 className="title uppercase text-4xl">{item.titleTwo}</h3>
+                <p className="my-4">{item.subtitle}</p>
               </div>
             </div>
           )
