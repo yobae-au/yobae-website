@@ -17,6 +17,7 @@ export default defineType({
       title: 'Blurb',
       type: 'text',
     }),
+    defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({
       name: 'offers',
       title: 'Offers',

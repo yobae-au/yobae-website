@@ -17,9 +17,10 @@ export default function Intro({ data }: Props) {
         <Image
           src={urlFor(primaryImage).url()}
           alt={primaryImage.alt || 'Intro Image'}
-          fill
-          className="object-cover"
+          width={1920}
+          height={1080}
           priority
+          className="absolute inset-0 w-full h-full object-cover"
         />
       )}
 

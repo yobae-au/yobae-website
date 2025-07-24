@@ -84,6 +84,13 @@ export type HomeFooter = {
   _type: 'homeFooter'
   title?: string
   blurb?: string
+  image?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
   offers?: {
     name?: string
     value?: string
