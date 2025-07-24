@@ -25,20 +25,22 @@ export function Navigation({ data }: Props) {
 }, [])
   return (
     <>
-      <button
-        onClick={() => setOpen(!open)}
-        className="fixed top-[2rem] left-[2rem] z-50 w-10 h-10"
-        aria-label="Toggle menu"
-      >
-        <div className="menu-icon">
-          <div className={`menu-icon__cheeckbox relative ${open ? 'open' : ''}`}>
-            <div>
-              <span></span>
-              <span></span>
+      <div className='fixed lg:top-[2rem] lg:left-[2rem] top-[1rem] left-[1rem] fake-1-col  z-50'>  
+        <button
+          onClick={() => setOpen(!open)}
+          className="relative z-50 w-[100%]"
+          aria-label="Toggle menu"
+        >
+          <div className="menu-icon w-[35%]">
+            <div className={`menu-icon__cheeckbox relative ${open ? 'open' : ''}`}>
+              <div>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
-        </div>
-      </button>
+        </button>
+      </div>
       <div
         className={`fixed top-0 left-0 z-40 w-[400px] h-[600px] bg-[#171717] text-white shadow-lg transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-[110%]'
@@ -108,11 +110,11 @@ export function Navigation({ data }: Props) {
         </div>
       </div> */}
       <div
-        className={`fixed fake-1-col top-[6rem] left-[2rem] z-5 transition-opacity duration-500 ${
+        className={`fixed fake-1-col lg:top-[6rem] lg:left-[2rem]  top-[4rem] left-[1rem] z-5 transition-opacity duration-500 ${
           showLogo ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="w-[35%]">
+        <div className="w-[35%] min-w-[28px]">
           <Image src={h_logo} alt="Logo" />
         </div>
       </div>

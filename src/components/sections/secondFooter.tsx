@@ -10,13 +10,12 @@ export default function SecondFooter({data, siteSettings}: Props) {
   console.log(siteSettings)
   return (
     <div>
-      <div className="grid grid-cols-12 gap-4  mb-4 mt-48">
-        <div className='col-span-2 col-start-2'>&copy;yobae 2025</div>
-        <div className="col-span-2 col-start-9">
-                    <span className=''>hello@yobae.com.au</span>
-
+      <div className="grid grid-cols-12 lg:gap-4 gap-2  mb-4 lg:mt-48 mt-24 mx-[1rem] lg:mx-0">
+        <div className='lg:col-span-2 lg:col-start-2 col-span-12'>&copy;yobae 2025</div>
+        <div className="lg:col-span-2 lg:col-start-9 col-span-6">
+          <span className=''>hello@yobae.com.au</span>
         </div>
-        <div className='col-span-1 col-start-12 flex justify-end pr-8'>
+        <div className='lg:col-span-1 lg:col-start-12 flex justify-end lg:pr-8 col-span-6'>
           <span className=''>@yobae</span>
         </div>
 

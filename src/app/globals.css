@@ -92,13 +92,14 @@ body {
 }
 .menu-icon {
   z-index: 10;
-  width: 40px;
+  width: 35%;
+  min-width: 32px;
   height: 24px;
 }
 
 .menu-icon__cheeckbox {
   position: relative;
-  width: 32px;
+  /* width: 32px; */
   height: 24px;
 }
 
@@ -137,5 +138,11 @@ body {
 
 .menu-icon__cheeckbox.open span:first-of-type,
 .menu-icon__cheeckbox.open span:last-of-type {
+  /* width: 32px; */
   width: 32px;
+}
+@media (max-width: 1023.9px) {
+  .yo-club .fake-1-col-margin {
+    left: 0;
+  }
 }

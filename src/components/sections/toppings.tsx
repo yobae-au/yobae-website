@@ -37,12 +37,12 @@ export default function Toppings({ data }: Props) {
   const chunks = chunk(items, perSlide)
 
   return (
-    <div className="grid grid-cols-12 gap-4">
-      <div className="col-span-4 col-start-2">
-        <h2 className="title uppercase mb-4 text-4xl">{data.title}</h2>
+    <div className="grid grid-cols-12 lg:gap-4 gap-2">
+      <div className="lg:col-span-4 lg:col-start-2 col-start-3 col-span-9">
+        <h2 className="title uppercase mb-4 title-scale">{data.title}</h2>
         <p className="mb-6">{data.blurb}</p>
       </div>
-      <div className="col-span-10 col-start-2 lg:col-span-6 lg:col-start-4 relative">
+      <div className="col-span-8 col-start-3 lg:col-span-6 lg:col-start-4 relative">
         <div className="lg:max-w-[900px] mx-auto lg:p-20 relative">
 
         {/* Left Arrow */}
@@ -64,7 +64,7 @@ export default function Toppings({ data }: Props) {
             {chunks.map((group, i) => (
               <SwiperSlide key={i}>
                 <div
-                  className={`grid gap-4 h-full ${
+                  className={`grid lg:gap-4 gap-2 h-full ${
                     isMobile ? 'grid-cols-2 grid-rows-3' : 'grid-cols-3 grid-rows-3'
                   }`}
                 >
@@ -87,8 +87,8 @@ export default function Toppings({ data }: Props) {
                           }`}
                         >
                           <div>
-                            <p className='text-4xl capitalize'>{item.title}</p>
-                            <p className='text-4xl title uppercase'>{item.subTitle}</p>
+                            <p className='title-scale capitalize'>{item.title}</p>
+                            <p className='title-scale title uppercase'>{item.subTitle}</p>
                           </div>
                         </div>
 

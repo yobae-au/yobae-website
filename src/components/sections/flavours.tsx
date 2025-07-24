@@ -18,13 +18,13 @@ export default function Flavours({ data }: Props) {
     }, [])
     
   return (
-    <div className="grid grid-cols-12 gap-4 lg:relative lg:top-[-300px]">
+    <div className="grid grid-cols-12 lg:gap-4 gap-2 lg:relative lg:top-[-300px] lg:mx-0 mx-4">
       <div className="col-span-10 col-start-3 lg:col-span-4 lg:col-start-2">
-        <h2 className="title mb-4 text-4xl">{data.title}</h2>
+        <h2 className="title mb-4 title-scale">{data.title}</h2>
         <p className=" mb-6">{data.blurb}</p>
       </div>
 
-      <div className="col-span-6 col-start-4 lg:mt-24 lg:col-span-6 lg:col-start-4 grid grid-cols-6 gap-y-12">
+      <div className="col-span-8 col-start-3 lg:mt-24 lg:col-span-6 lg:col-start-4 grid grid-cols-6 lg:gap-y-12 gap-y-2">
         {data.items?.map((item, index) => {
           const primary = item.primaryImage
           const secondary = item.secondaryImage
@@ -39,7 +39,7 @@ export default function Flavours({ data }: Props) {
             >
               {primary?.asset && (
                 <div
-                  className="relative group w-full max-w-[300px] mx-auto overflow-hidden rounded"
+                  className="relative group w-full max-w-[200px] lg:max-w-[300px] mx-auto overflow-hidden rounded"
                   onClick={() => {
                     if (isMobile) {
                       setTappedIndex(tappedIndex === index ? null : index)
@@ -81,9 +81,9 @@ export default function Flavours({ data }: Props) {
                 </div>
               )}
               <div className="text-center mt-4">
-                <h3 className="text-4xl">{item.title}</h3>
-                <h3 className="title uppercase text-4xl">{item.titleTwo}</h3>
-                <p className="my-4">{item.subtitle}</p>
+                <h3 className="title-scale leading-4 lg:leading-5">{item.title}</h3>
+                <h3 className="title uppercase title-scale">{item.titleTwo}</h3>
+                <p className="lg:my-4 my-2">{item.subtitle}</p>
               </div>
             </div>
           )
