@@ -20,6 +20,13 @@ export type SiteSettings = {
 export type HomeIntro = {
   _id: string
   _type: 'homeIntro'
+  mobileImage?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
   image?: {
     asset: {
       _ref: string
@@ -85,6 +92,13 @@ export type HomeFooter = {
   title?: string
   blurb?: string
   image?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
+  mobileImage?: {
     asset: {
       _ref: string
       _type: 'reference'

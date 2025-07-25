@@ -12,6 +12,7 @@ type Props = {
 export default function HomeFooter({ data, siteSettings  }: Props) {
   const locations = siteSettings.locations ?? []
   const primaryImage = data.image
+  const mobileImage = data.mobileImage
   // Repeat locations to ensure at least 5
   const paddedLocations = Array.from({ length: 3 }, (_, i) => locations[i % locations.length]) // TODO
 
@@ -21,11 +22,11 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
         <div className='lg:col-start-2 lg:col-span-11 col-start-3 col-span-9'>
           <h2 className="title big-title-scale">{data.title}</h2>
         </div>
-        <div className='lg:col-start-2 lg:col-span-4 col-start-3 col-span-9 my-24'>
+        <div className='lg:col-start-2 lg:col-span-4 col-start-3 col-span-9 lg:my-24 my-6'>
           <p className="">{data.blurb}</p>
         </div>
         <div className='lg:col-start-1 lg:col-span-7 col-start-3 col-span-9'>
-          <div className="relative z-20 fake-1-col-margin">
+          <div className="relative z-20 fake-1-col-margin footer-offers mb-6">
             {data.offers?.map((offer, index) => (
               <div className={` border-b-1 py-4 ${index === 0 ? 'border-t-1' : ''}`} key={index}>
                 <p className="title-scale leading-[1.1]">{offer.name}</p>
@@ -34,7 +35,7 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
             ))}
           </div>
           <div className="relative fake-1-col-margin">
-            <div className=' flex lg:gap-4 gap-2 lg:mt-24 mt-12 mb-12 lg:mb-0'>
+            <div className=' flex lg:gap-4 gap-2 lg:mt-24 mb-6 lg:mb-0'>
               <a href={siteSettings.appStoreUrl} target="_blank" rel="noopener noreferrer">
                 <Image
                   className="dark:invert"
@@ -63,17 +64,26 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
             <div className='lg:top-[-200px] lg:relative'>
               <Image
                 src={urlFor(primaryImage).url()}
-                alt={primaryImage.alt || 'Intro Image'}
+                alt={primaryImage.alt || 'Yo Club Image'}
                 width={500}
                 height={300}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover hidden lg:block"
                 />
+                {mobileImage?.asset && (
+                <Image
+                  src={urlFor(mobileImage).url()}
+                  alt={mobileImage.alt || 'Yo Club Image'}
+                  width={500}
+                  height={300}
+                  className="w-full h-auto object-cover lg:hidden"
+                  />
+                )}
             </div>
           </div>
         )}
 
         
-        <div className="lg:col-start-2 lg:col-span-2 col-start-3 col-span-9 lg:mt-36 mt-16">
+        <div className="lg:col-start-2 lg:col-span-2 col-start-3 col-span-9 lg:mt-36 mt-20 mb-6">
           <h2 className='title title-scale leading-[1]'>LOCATIONS</h2>
         </div>
        {paddedLocations.map((location, index) => {
@@ -88,9 +98,7 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
             <p>{location.street}</p>
             <p>{location.suburb}</p>
           </div>
-          
         );
-        
       })}
       </div>
     </div>

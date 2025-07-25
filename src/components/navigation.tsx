@@ -42,7 +42,7 @@ export function Navigation({ data }: Props) {
         </button>
       </div>
       <div
-        className={`fixed top-0 left-0 z-40 w-[400px] h-[600px] bg-[#171717] text-white shadow-lg transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-40 md:w-[400px] md:h-[600px] w-full h-full bg-[#171717] text-white shadow-lg transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-[110%]'
         }`}>
         <div className="relative h-full p-8">
@@ -86,7 +86,7 @@ export function Navigation({ data }: Props) {
               onClick={() => setOpen(false)}
               className="cursor-pointer title capitalize"
             >
-              JOIN THE JO CLUB!
+              JOIN THE YO CLUB!
             </Link>
             <Link
               to="locations"
@@ -100,7 +100,7 @@ export function Navigation({ data }: Props) {
             </Link>
           </div>
           <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
-            <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae</a>
+            <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae_au</a>
           </div>
         </div>
       </div>

@@ -9,20 +9,35 @@ type Props = {
 
 export default function Intro({ data }: Props) {
   const primaryImage = data.image
+  const mobileImage = data.mobileImage
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Full-screen Background Image */}
-      {primaryImage?.asset && (
-        <Image
+        {mobileImage?.asset && (
+          <Image
+          src={urlFor(mobileImage).url()}
+          alt={mobileImage.alt || 'Intro Image'}
+          width={1920}
+          height={1080}
+          priority
+          className="absolute inset-0 w-full h-full object-cover lg:hidden"
+          />
+        )}
+
+      
+
+        {primaryImage?.asset && (
+          <Image
           src={urlFor(primaryImage).url()}
           alt={primaryImage.alt || 'Intro Image'}
           width={1920}
           height={1080}
           priority
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
+          className="absolute inset-0 w-full h-full object-cover hidden lg:block"
+          />
+        )}
+  
 
       {/* Marquee overlay at 75% down */}
       {data.marquee && (
