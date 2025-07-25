@@ -25,13 +25,14 @@
   font-display: swap;
 }
 
-@theme inline {
+/* @theme (inline) {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
+/* light dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -43,13 +44,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'GintoNord', Arial, Helvetica, sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
 }
 
-.nav-col {
+.fake-1-col {
   width: calc((100% - (1rem * 11)) / 12);
-  background: blue; /* for debugging */
-  left: 1rem;
 }
+
+.fake-1-col-margin {
+  left: calc(((100% - 11rem) / 7) + 1.5rem);
+}
+
 
 .home-marquee span.m-bold {
   width: 400px;
@@ -58,5 +63,99 @@ body {
 
 .title {
   font-family: 'GintoNordBold', sans-serif;
-  font-size: 2rem;
+}
+
+.title-scale {
+  /* font-size: clamp(1.75rem, 4vw, 2.25rem); */
+  font-size: clamp(1.3rem, 4vw, 2.25rem);
+}
+
+.big-title-scale {
+  font-size: clamp(2.75rem, 6vw, 10rem);
+  line-height: 0.8;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+  color: black !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px !important;
+  font-family: 'GintoNordBold' !important;
+}
+.swiper-button-prev:after {
+    content: '〈' !important;
+}
+
+.swiper-button-next:after {
+    content: '〉' !important;
+}
+.menu-icon {
+  z-index: 10;
+  width: 35%;
+  min-width: 32px;
+  height: 24px;
+}
+
+.menu-icon__cheeckbox {
+  position: relative;
+  /* width: 32px; */
+  height: 24px;
+}
+
+.menu-icon span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px; /* thicker lines for visibility */
+  background-color: #000;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon .open span {
+  background-color: #fff;
+}
+
+.menu-icon span:first-of-type {
+  top: 0;
+}
+
+.menu-icon span:last-of-type {
+  bottom: 0;
+}
+
+/* Open state */
+.menu-icon__cheeckbox.open span:first-of-type {
+  transform: rotate(45deg);
+  top: 11px; /* half of 24px height */
+}
+
+.menu-icon__cheeckbox.open span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 11px;
+}
+
+.menu-icon__cheeckbox.open span:first-of-type,
+.menu-icon__cheeckbox.open span:last-of-type {
+  /* width: 32px; */
+  width: 32px;
+}
+@media (max-width: 1023.9px) {
+  .yo-club .fake-1-col-margin {
+    left: 0;
+  }
+
+  .big-title-scale {
+    line-height: 0.9;
+  }
+
+  .swiper-button-next{
+    right: -30px !important;
+  }
+  .swiper-button-prev{
+    left: -30px !important;
+  }
+
 }

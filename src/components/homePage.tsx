@@ -36,37 +36,39 @@ export function HomePage({
   return (
     <div className="scroll-smooth">
       <Element name="intro">
-        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
+        <section className="min-h-screen flex items-center justify-center">
           <Intro data={homeIntro} />
         </section>
       </Element>
 
       <Element name="story">
-        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
+        <section className="min-h-screen flex items-center justify-center">
           <Story data={homeStory} />
         </section>
       </Element>
 
       <Element name="flavours">
-        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
+        <section className="min-h-screen flex items-center justify-center">
           <Flavours data={homeFlavours}/>
         </section>
       </Element>
 
       <Element name="toppings">
-        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
+        <section className="min-h-screen flex items-center justify-center">
           <Toppings data={homeToppings} />
         </section>
       </Element>
 
-      <Element name="footer">
-        <section className="min-h-screen flex items-center justify-center border-b-1 border-gray-200">
+      <Element name="yoclub">
+        <section className="min-h-screen flex items-center justify-center">
           <HomeFooterSection data={homeFooter} siteSettings={siteSettings}/>
         </section>
       </Element>
-      <section>
-        <SecondFooter data={homeFooter} siteSettings={siteSettings} />
-      </section>
+      <Element name="locations">
+        <section>
+          <SecondFooter data={homeFooter} siteSettings={siteSettings} />
+        </section>
+      </Element>
     </div>
   )
 }

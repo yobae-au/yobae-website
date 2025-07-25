@@ -51,6 +51,7 @@ export default defineType({
         {
           type: 'object',
           fields: [
+            { name: 'title', title: 'Title', type: 'string' },
             { name: 'location', title: 'Location', type: 'string' },
             { name: 'store', title: 'Store', type: 'string' },
             { name: 'street', title: 'Street', type: 'string' },

@@ -7,6 +7,7 @@ export default defineType({
   title: 'Home: Intro',
   type: 'document',
   fields: [
+    defineField({ name: 'mobileImage', title: 'Mobile Image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({
       name: 'marquee',

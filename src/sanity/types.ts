@@ -9,6 +9,7 @@ export type SiteSettings = {
   appStoreUrl?: string
   googlePlayUrl?: string
   locations?: {
+    title?: string
     location?: string
     store?: string
     street?: string
@@ -19,6 +20,13 @@ export type SiteSettings = {
 export type HomeIntro = {
   _id: string
   _type: 'homeIntro'
+  mobileImage?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
   image?: {
     asset: {
       _ref: string
@@ -70,6 +78,7 @@ export type HomeToppings = {
   blurb?: string
   items?: {
     title?: string
+    subTitle?: string
     image?: {
       asset: { _ref: string; _type: 'reference' }
       alt?: string
@@ -82,6 +91,20 @@ export type HomeFooter = {
   _type: 'homeFooter'
   title?: string
   blurb?: string
+  image?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
+  mobileImage?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
+    alt?: string
+  }
   offers?: {
     name?: string
     value?: string
