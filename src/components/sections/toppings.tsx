@@ -37,7 +37,7 @@ export default function Toppings({ data }: Props) {
   const chunks = chunk(items, perSlide)
 
   return (
-    <div className="grid grid-cols-12 lg:gap-4 gap-2">
+    <div className="grid grid-cols-12 lg:gap-4 gap-2 lg:mb-40">
       <div className="lg:col-span-4 lg:col-start-2 col-start-3 col-span-9">
         <h2 className="title uppercase mb-4 title-scale">{data.title}</h2>
         <p className="mb-6">{data.blurb}</p>
@@ -87,8 +87,8 @@ export default function Toppings({ data }: Props) {
                           }`}
                         >
                           <div>
-                            <p className='title-scale capitalize'>{item.title}</p>
-                            <p className='title-scale title uppercase'>{item.subTitle}</p>
+                            <p className='sml-title-scale leading-4 lg:leading-7 capitalize'>{item.title}</p>
+                            <p className='sml-title-scale leading-4 lg:leading-7 title uppercase'>{item.subTitle}</p>
                           </div>
                         </div>
 

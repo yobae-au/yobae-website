@@ -5,7 +5,7 @@ import {Element } from 'react-scroll'
 import Flavours from './sections/flavours'
 import Intro from './sections/intro'
 import Story from './sections/story'
-import Toppings from './sections/toppings'
+// import Toppings from './sections/toppings'
 import HomeFooterSection from './sections/homeFooter'
 import SecondFooter from './sections/secondFooter'
 
@@ -23,7 +23,7 @@ export function HomePage({
   homeIntro,
   homeStory,
   homeFlavours,
-  homeToppings,
+  // homeToppings,
   homeFooter, }: Props) {
   
   // console.log('[siteSettings]', siteSettings)
@@ -53,11 +53,12 @@ export function HomePage({
         </section>
       </Element>
 
-      <Element name="toppings">
+      {/*  Remember the Menu. */}
+      {/* <Element name="toppings">
         <section className="min-h-screen flex items-center justify-center">
           <Toppings data={homeToppings} />
         </section>
-      </Element>
+      </Element> */}
 
       <Element name="yoclub">
         <section className="min-h-screen flex items-center justify-center">

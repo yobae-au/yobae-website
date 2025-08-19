@@ -14,7 +14,7 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
   const primaryImage = data.image
   const mobileImage = data.mobileImage
   // Repeat locations to ensure at least 5
-  const paddedLocations = Array.from({ length: 3 }, (_, i) => locations[i % locations.length]) // TODO
+  // const paddedLocations = Array.from({ length: 6 }, (_, i) => locations[i % locations.length]) // TODO
 
   return (
     <div className='yo-club'>
@@ -65,8 +65,8 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
               <Image
                 src={urlFor(primaryImage).url()}
                 alt={primaryImage.alt || 'Yo Club Image'}
-                width={500}
-                height={300}
+                width={1000}
+                height={600}
                 className="w-full h-auto object-cover hidden lg:block"
                 />
                 {mobileImage?.asset && (
@@ -83,15 +83,15 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
         )}
 
         
-        <div className="lg:col-start-2 lg:col-span-2 col-start-3 col-span-9 lg:mt-36 mt-20 mb-6">
+        <div className="lg:col-start-2 lg:col-span-2 col-start-3 col-span-9 lg:mt-20 mt-20 mb-6">
           <h2 className='title title-scale leading-[1]'>LOCATIONS</h2>
         </div>
-       {paddedLocations.map((location, index) => {
+       {locations.map((location, index) => {
         // Compute col-start: 7 → 9 → 11 → 7 → ...
         const colStart = ['lg:col-start-7', 'lg:col-start-9', 'lg:col-start-11'][index % 3];
         // TODO MOBILE.
         return (
-          <div className={` lg:mt-36 mt-4 lg:col-span-2 ${colStart} col-start-3 col-span-9`} key={index}>
+          <div className={` lg:mt-20 mt-4 lg:col-span-2 ${colStart} col-start-3 col-span-9`} key={index}>
             <p className="title uppercase lg:mb-4">{location.title}</p>
             <p>{location.location}</p>
             <p>{location.store}</p>
