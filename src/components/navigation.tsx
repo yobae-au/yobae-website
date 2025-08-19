@@ -68,7 +68,7 @@ export function Navigation({ data }: Props) {
             >
               THE FLAVOURS
             </Link>
-            <Link
+            {/* <Link
               to="toppings"
               smooth
               duration={600}
@@ -77,7 +77,7 @@ export function Navigation({ data }: Props) {
               className="cursor-pointer title capitalize"
             >
               THE TOPPINGS
-            </Link>
+            </Link> */}
             <Link
               to="yoclub"
               smooth
