@@ -31,8 +31,8 @@ export default function Intro({ data }: Props) {
           <Image
           src={urlFor(primaryImage).url()}
           alt={primaryImage.alt || 'Intro Image'}
-          width={1920}
-          height={1080}
+          width={2496}
+          height={1404}
           priority
           className="absolute inset-0 w-full h-full object-cover hidden lg:block"
           />
