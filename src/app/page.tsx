@@ -1,7 +1,9 @@
 import { client } from '@/sanity/lib/client'
 import { Navigation } from '@/components/navigation'
 import { HomePage } from '@/components/homePage'
+import { fetchSiteSettings } from '@/sanity/lib/fetchSiteSettings'
 
+import type { Metadata } from "next";
 import type {
   SiteSettings,
   HomeIntro,
@@ -10,6 +12,15 @@ import type {
   HomeToppings,
   HomeFooter,
 } from '@/sanity/types'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await fetchSiteSettings()
+
+  return {
+    title: settings?.metaTitle,
+    description: settings?.metaDescription,
+  }
+}
 
 export default async function Page() {
   const [siteSettings, homeIntro, homeStory, homeFlavours, homeToppings, homeFooter] =
