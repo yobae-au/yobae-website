@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import h_logo from '../../public/h_logo.png'
+import insta from '../../public/Insta.svg'
+import tiktok from '../../public/TikTok.svg'
 
 type Props = {
   data: SiteSettings
@@ -99,9 +101,17 @@ export function Navigation({ data }: Props) {
               LOCATIONS
             </Link>
           </div>
-          <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
+            <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
+            <div className="flex justify-center items-center gap-4 mb-2">
+              <a href="https://tiktok.com/@yobae_au" target="_blank" rel="noopener noreferrer">
+              <Image src={tiktok} alt="Tiktok Logo" width={40} />
+              </a>
+              <a href={data.instagram} target="_blank" rel="noopener noreferrer">
+              <Image src={insta} alt="Instagram Logo" width={40} />
+              </a>
+            </div>
             <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae_au</a>
-          </div>
+            </div>
         </div>
       </div>
       {/* <div className='fixed fake-1-col top-[6rem] left-[2rem] z-5'>
