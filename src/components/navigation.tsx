@@ -104,13 +104,13 @@ export function Navigation({ data }: Props) {
             <div className="absolute bottom-6 left-0 right-0 text-center text-sm opacity-80">
             <div className="flex justify-center items-center gap-4 mb-2">
               <a href="https://tiktok.com/@yobae_au" target="_blank" rel="noopener noreferrer">
-              <Image src={tiktok} alt="Tiktok Logo" width={40} />
+              <Image src={tiktok} alt="Tiktok Logo" width={25} />
               </a>
               <a href={data.instagram} target="_blank" rel="noopener noreferrer">
-              <Image src={insta} alt="Instagram Logo" width={40} />
+              <Image src={insta} alt="Instagram Logo" width={25} />
               </a>
             </div>
-            <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae_au</a>
+            {/* <a href={data.instagram} target="_blank" rel="noopener noreferrer">@yobae_au</a> */}
             </div>
         </div>
       </div>
