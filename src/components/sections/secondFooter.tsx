@@ -7,7 +7,7 @@ type Props = {
 }
 
 export default function SecondFooter({data, siteSettings}: Props) {
-  console.log(siteSettings)
+  // console.log(siteSettings)
   return (
     <div>
       <div className="grid grid-cols-12 lg:gap-4 gap-2  mb-4 lg:mt-48 mt-24 mx-[1rem] lg:mx-0">
