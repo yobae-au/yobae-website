@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { fetchSiteSettings } from "@/sanity/lib/fetchSiteSettings";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,19 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Yo Bae",
-  description: "Yo Bae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await fetchSiteSettings()
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   const settings = await fetchSiteSettings()
-
-//   return {
-//     title: settings?.metaTitle || 'Yo Bae',
-//     description: settings?.metaDescription || 'Yo Bae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.',
-//   }
-// }
+  return {
+    title: settings?.metaTitle || 'Yo Bae',
+    description: settings?.metaDescription || 'Yo Bae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.',
+  }
+}
 
 export default function RootLayout({
   children,
