@@ -1,7 +1,6 @@
 import { client } from '@/sanity/lib/client'
 import { Navigation } from '@/components/navigation'
 import { HomePage } from '@/components/homePage'
-import { fetchSiteSettings } from '@/sanity/lib/fetchSiteSettings'
 
 import type { Metadata } from "next";
 import type {
@@ -14,11 +13,15 @@ import type {
 } from '@/sanity/types'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await fetchSiteSettings()
+  const settings = await client.fetch<SiteSettings>(
+    `*[_type == "siteSettings" && _id == "siteSettings"][0]`
+  )
 
   return {
-    title: settings?.metaTitle,
-    description: settings?.metaDescription,
+    title: settings?.metaTitle || 'Yo Bae',
+    description:
+      settings?.metaDescription ||
+      'Yo Bae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.',
   }
 }
 
