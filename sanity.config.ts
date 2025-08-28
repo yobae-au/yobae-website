@@ -13,7 +13,6 @@ import { dashboardTool } from "@sanity/dashboard";
 import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
-// import { netlifyTool } from 'sanity-plugin-netlify'
 import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
 
 export default defineConfig({
