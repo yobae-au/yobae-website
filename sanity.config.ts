@@ -12,6 +12,7 @@ import {structureTool} from 'sanity/structure'
 import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
+import { netlifyTool } from 'sanity-plugin-netlify'
 
 export default defineConfig({
   basePath: '/studio',
@@ -21,6 +22,7 @@ export default defineConfig({
   plugins: [
     structureTool({ structure }), // ✅ custom desk structure with singleton support
     visionTool({ defaultApiVersion: apiVersion }),
+    netlifyTool() // 🔗 Netlify plugin for previewing and deploying your Sanity Studio
   ],
   document: {
     // 🔒 Disable actions for singleton

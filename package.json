@@ -16,9 +16,10 @@
     "next-sanity": "^9.12.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scroll": "^1.9.3",
     "react-fast-marquee": "^1.6.5",
+    "react-scroll": "^1.9.3",
     "sanity": "^3.99.0",
+    "sanity-plugin-netlify": "^1.1.2",
     "styled-components": "^6.1.19",
     "swiper": "^11.2.10"
   },
