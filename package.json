@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@netlify/next": "^1.4.9",
+    "@sanity/dashboard": "^4.1.4",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.99.0",
     "next": "15.3.5",
@@ -19,6 +20,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-scroll": "^1.9.3",
     "sanity": "^3.99.0",
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.2",
     "sanity-plugin-netlify": "^1.1.2",
     "styled-components": "^6.1.19",
     "swiper": "^11.2.10"

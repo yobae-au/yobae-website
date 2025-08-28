@@ -1473,7 +1473,7 @@
   dependencies:
     "@floating-ui/utils" "^0.2.10"
 
-"@floating-ui/dom@^1.2.7":
+"@floating-ui/dom@^1.2.7", "@floating-ui/dom@^1.7.4":
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.7.4.tgz#ee667549998745c9c3e3e84683b909c31d6c9a77"
   integrity sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA==
@@ -1502,6 +1502,13 @@
   integrity sha512-JbbpPhp38UmXDDAu60RJmbeme37Jbgsm7NrHGgzYYFKmblzRUh6Pa641dII6LsjwF4XlScDrde2UAzDo/b9KPw==
   dependencies:
     "@floating-ui/dom" "^1.7.2"
+
+"@floating-ui/react-dom@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.1.6.tgz#189f681043c1400561f62972f461b93f01bf2231"
+  integrity sha512-4JX6rEatQEvlmgU80wZyq9RT96HZJa88q8hp0pBd+LrczeDI4o6uA2M+uvxngVHo4Ihr8uibXxH6+70zhAFrVw==
+  dependencies:
+    "@floating-ui/dom" "^1.7.4"
 
 "@floating-ui/utils@^0.2.10":
   version "0.2.10"
@@ -2493,6 +2500,18 @@
     uuid "^11.1.0"
     xstate "^5.20.1"
 
+"@sanity/dashboard@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@sanity/dashboard/-/dashboard-4.1.4.tgz#9273698d6b539574e780fbb3549f03137baf1e1e"
+  integrity sha512-ejG5TXpjWNVB1vUHx08hs8xg9aFaqvaK6+JPrSOlJ59eP6mQ8h3gyd1umlhkmCKF3CYoP+5Hip+iUojQ0ACYDA==
+  dependencies:
+    "@sanity/icons" "^3.5.2"
+    "@sanity/image-url" "^1.1.0"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^2.10.9"
+    lodash "^4.17.21"
+    rxjs "^7.8.1"
+
 "@sanity/descriptors@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@sanity/descriptors/-/descriptors-1.1.1.tgz"
@@ -2558,7 +2577,7 @@
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.11.8.tgz#90a38b7d23b5c9f728a6e7ebdac80c3f76c64c35"
   integrity sha512-C4ViXtk6eyiNTQ5OmxpfmcK6Jw+LLTi9zg9XBUD15DzC4xTHaGW9SVfUa43YtPGs3WC3M0t0K59r0GDjh52HIg==
 
-"@sanity/icons@^3.7.0", "@sanity/icons@^3.7.4":
+"@sanity/icons@^3.5.2", "@sanity/icons@^3.7.0", "@sanity/icons@^3.7.4":
   version "3.7.4"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-3.7.4.tgz"
   integrity sha512-O9MnckiDsphFwlRS8Q3kj3n+JYUZ0UzKRujnSikMZOKI0dayucRe4U2XvxikRhJnFhcEJXW2RkWJoBaCoup9Sw==
@@ -2604,7 +2623,7 @@
     tar-fs "^2.1.3"
     tinyglobby "^0.2.9"
 
-"@sanity/incompatible-plugin@^1.0.4":
+"@sanity/incompatible-plugin@^1.0.4", "@sanity/incompatible-plugin@^1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.5.tgz#cdf50c88a0938906a15ac2eb6cc21cafea898b76"
   integrity sha512-9JGAacbElUPy9Chghd+sllIiM3jAcraZdD65bWYWUVKkghOsf1L/+jFLz1rcAuvrA9o2s7Y+T75BNcXuLwRcvw==
@@ -2827,6 +2846,21 @@
     csstype "^3.1.2"
     framer-motion "^10.16.2"
     react-refractor "^2.1.7"
+
+"@sanity/ui@^2.10.9":
+  version "2.16.13"
+  resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-2.16.13.tgz#69802b216bf39a5b1945915d72a2000ce156bd67"
+  integrity sha512-eHG64m1vKfsXzxbW/mDR+7UVqeRJx3R0lU89cxnTkQmLaemDbnrp3dHVgAtAkO65PzzdRiLveUx3umxGq6lxTQ==
+  dependencies:
+    "@floating-ui/react-dom" "^2.1.6"
+    "@juggle/resize-observer" "^3.4.0"
+    "@sanity/color" "^3.0.6"
+    "@sanity/icons" "^3.7.4"
+    csstype "^3.1.3"
+    framer-motion "^12.23.12"
+    react-compiler-runtime "19.1.0-rc.2"
+    react-refractor "^2.2.0"
+    use-effect-event "^2.0.3"
 
 "@sanity/ui@^2.15.17", "@sanity/ui@^2.16.4", "@sanity/ui@^2.16.7":
   version "2.16.7"
@@ -3580,6 +3614,13 @@
   dependencies:
     use-isomorphic-layout-effect "^1.1.2"
     use-sync-external-store "^1.2.0"
+
+abort-controller@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-2.0.3.tgz#b174827a732efadff81227ed4b8d1cc569baf20a"
+  integrity sha512-EPSq5wr2aFyAZ1PejJB32IX9Qd4Nwus+adnp7STYFM5/23nLPBazqZ1oor6ZqbH+4otaaGXTlC8RN5hq3C8w9Q==
+  dependencies:
+    event-target-shim "^5.0.0"
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -5633,6 +5674,15 @@ framer-motion@^12.19.2, framer-motion@^12.23.3:
     motion-utils "^12.23.2"
     tslib "^2.4.0"
 
+framer-motion@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.23.12.tgz#80cf6fd7c111073a0c558e336c85ca36cca80d3d"
+  integrity sha512-6e78rdVtnBvlEVgu6eFEAgG9v3wLnYEboM8I5O5EXvfKC8gxGQB8wXJdhkMy10iVcn05jl6CNw7/HTsTCfwcWg==
+  dependencies:
+    motion-dom "^12.23.12"
+    motion-utils "^12.23.6"
+    tslib "^2.4.0"
+
 from2@^2.1.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/from2/-/from2-2.3.0.tgz"
@@ -7232,6 +7282,13 @@ moment@^2.30.1:
   resolved "https://registry.npmjs.org/moment/-/moment-2.30.1.tgz"
   integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
 
+motion-dom@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.23.12.tgz#87974046e7e61bc4932f36d35e8eab6bb6f3e434"
+  integrity sha512-RcR4fvMCTESQBD/uKQe49D5RUeDOokkGRmz4ceaJKDBgHYtZtntC/s2vLvY38gqGaytinij/yi3hMcWVcEF5Kw==
+  dependencies:
+    motion-utils "^12.23.6"
+
 motion-dom@^12.23.2:
   version "12.23.2"
   resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.23.2.tgz"
@@ -7243,6 +7300,11 @@ motion-utils@^12.23.2:
   version "12.23.2"
   resolved "https://registry.npmjs.org/motion-utils/-/motion-utils-12.23.2.tgz"
   integrity sha512-cIEXlBlXAOUyiAtR0S+QPQUM9L3Diz23Bo+zM420NvSd/oPQJwg6U+rT+WRTpp0rizMsBGQOsAwhWIfglUcZfA==
+
+motion-utils@^12.23.6:
+  version "12.23.6"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.23.6.tgz#fafef80b4ea85122dd0d6c599a0c63d72881f312"
+  integrity sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==
 
 ms@2.0.0:
   version "2.0.0"
@@ -8077,6 +8139,11 @@ react-is@^18.2.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.3.1.tgz"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
 
+react-props-stream@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-props-stream/-/react-props-stream-1.0.1.tgz#dac2198df19d27efe2d0f9bf7eb016e1ec22c4f9"
+  integrity sha512-lBMW9S7OvqE8sYruPTpG8Dv7WVwHiDt4hJmhixoRNlHBtVMnMvMJal/tsH8F/YKMsObvSkY3PCWCPRLqnEaOaw==
+
 react-refractor@^2.1.6, react-refractor@^2.1.7, react-refractor@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/react-refractor/-/react-refractor-2.2.0.tgz"
@@ -8443,6 +8510,13 @@ rxjs-mergemap-array@^0.1.0:
   resolved "https://registry.npmjs.org/rxjs-mergemap-array/-/rxjs-mergemap-array-0.1.0.tgz"
   integrity sha512-19fXxPXN4X8LPWu7fg/nyX+nr0G97qSNXhEvF32cdgWuoyUVQ4MrFr+UL4HGip6iO5kbZOL4puAjPeQ/D5qSlA==
 
+rxjs@^6.6.7:
+  version "6.6.7"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
+  integrity sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==
+  dependencies:
+    tslib "^1.9.0"
+
 rxjs@^7.0.0, rxjs@^7.8.0, rxjs@^7.8.1, rxjs@^7.8.2:
   version "7.8.2"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz"
@@ -8492,6 +8566,17 @@ safe-regex-test@^1.0.3, safe-regex-test@^1.1.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+sanity-plugin-dashboard-widget-netlify@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-dashboard-widget-netlify/-/sanity-plugin-dashboard-widget-netlify-2.0.2.tgz#89044d926654abaeb22588b8dec2a16e09e265d0"
+  integrity sha512-gW+8iiCmTHZ47m48Ffa/u9sNeeARWSS6mhlv13Do3S5W4UcDTvhAROegKlnAO2n9My+F/3KhlGyfqsr1XQglww==
+  dependencies:
+    "@sanity/incompatible-plugin" "^1.0.5"
+    "@sanity/ui" "^2.16.4"
+    abort-controller "^2.0.3"
+    react-props-stream "^1.0.1"
+    rxjs "^6.6.7"
 
 sanity-plugin-netlify@^1.1.2:
   version "1.1.2"
@@ -9489,6 +9574,11 @@ tslib@2.6.2:
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
 
+tslib@^1.9.0:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
+  integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
 tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.4.0, tslib@^2.8.0:
   version "2.8.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
@@ -9773,6 +9863,11 @@ use-effect-event@^2.0.1, use-effect-event@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/use-effect-event/-/use-effect-event-2.0.2.tgz"
   integrity sha512-IGikKu2QMAjtBUc3basvXjYvAXvGAMTVmcz9S2cuuRDEGH142Ez4ctiOzhsw3HGNZoFSB2a+0c4OHpT1OTw3Og==
+
+use-effect-event@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/use-effect-event/-/use-effect-event-2.0.3.tgz#9e013702d37dc9f8930c7717d9cfdb3804b23240"
+  integrity sha512-fz1en+z3fYXCXx3nMB8hXDMuygBltifNKZq29zDx+xNJ+1vEs6oJlYd9sK31vxJ0YI534VUsHEBY0k2BATsmBQ==
 
 use-hot-module-reload@^2.0.0:
   version "2.0.0"
