@@ -14,8 +14,17 @@ const geistMono = Geist_Mono({
 
 // fallback metadata, will be overridden by page.tsx
 export const metadata: Metadata = {
-  title: "Yo Bae",
-  description: "Yo Bae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.",
+  title: "YoBae",
+  description: "YoBae serves up delicious froyo with no fuss. We invite everyone to join the Yo Club, where we celebrate good vibes and great times.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon-96x96.png", // optional
+    apple: "/apple-touch-icon.png"  // ✅ remove trailing space here
+  }
 };
 
 export default function RootLayout({
