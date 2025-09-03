@@ -9,7 +9,7 @@ type Props = {
   siteSettings: SiteSettings
 }
 
-export default function HomeFooter({ data, siteSettings  }: Props) {
+export default function HomeFooter({ data, siteSettings }: Props) {
   const locations = siteSettings.locations ?? []
   const primaryImage = data.image
   const mobileImage = data.mobileImage
@@ -68,38 +68,45 @@ export default function HomeFooter({ data, siteSettings  }: Props) {
                 width={1000}
                 height={600}
                 className="w-full h-auto object-cover hidden lg:block"
-                />
-                {mobileImage?.asset && (
+              />
+              {mobileImage?.asset && (
                 <Image
                   src={urlFor(mobileImage).url()}
                   alt={mobileImage.alt || 'Yo Club Image'}
                   width={500}
                   height={300}
                   className="w-full h-auto object-cover lg:hidden"
-                  />
-                )}
+                />
+              )}
             </div>
           </div>
         )}
 
-        
+
         <div className="lg:col-start-2 lg:col-span-2 col-start-3 col-span-9 lg:mt-20 mt-20 mb-6">
           <h2 className='title title-scale leading-[1]'>LOCATIONS</h2>
         </div>
-       {locations.map((location, index) => {
-        // Compute col-start: 7 → 9 → 11 → 7 → ...
-        const colStart = ['lg:col-start-7', 'lg:col-start-9', 'lg:col-start-11'][index % 3];
-        // TODO MOBILE.
-        return (
-          <div className={` lg:mt-20 mt-4 lg:col-span-2 ${colStart} col-start-3 col-span-9`} key={index}>
-            <p className="title uppercase lg:mb-4">{location.title}</p>
-            <p>{location.location}</p>
-            <p>{location.store}</p>
-            <p>{location.street}</p>
-            <p>{location.suburb}</p>
-          </div>
-        );
-      })}
+        {locations.map((location, index) => {
+          // Compute col-start: 7 → 9 → 11 → 7 → ...
+          const colStart = ['lg:col-start-7', 'lg:col-start-9', 'lg:col-start-11'][index % 3];
+          // TODO MOBILE.
+          return (
+            <div className={` lg:mt-20 mt-4 lg:col-span-2 ${colStart} col-start-3 col-span-9`} key={index}>
+              <p className="title uppercase lg:mb-4">{location.title}</p>
+              <p>{location.location}</p>
+              <p>{location.store}&nbsp;</p>
+              <p>{location.street}&nbsp;</p>
+              <p>{location.suburb}&nbsp;</p>
+              {location.hours && location.hours.length > 0 && (
+                <div>
+                  {location.hours.map((hour, idx) => (
+                    <p key={idx}>{hour}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   )
