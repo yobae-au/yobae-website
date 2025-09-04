@@ -14,6 +14,7 @@ export type SiteSettings = {
     store?: string
     street?: string
     suburb?: string
+    hours?: string[]
   }[]
 }
 
